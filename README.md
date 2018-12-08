@@ -21,7 +21,8 @@ acpi \
 pulseaudio \
 util-linux \
 rofi \
-i3lock
+i3lock \
+compton
 ```
 
 ## Setup i3blocks configuration
@@ -55,7 +56,7 @@ Add this to your i3 configuration:
 
 ```
 # Lock screen
-bindsym $mod+p exec i3lock -c 000000 -e -f
+bindsym $mod+p exec i3lock -c 000000 -e -f & sleep 2 && xset dpms force off
 
 # Remove window titlebar
 for_window [class="^.*"] border pixel 2
@@ -73,6 +74,12 @@ exec --no-startup-id "nm-applet"
 
 # Wallpaper
 exec --no-startup-id feh --bg-scale ~/Pictures/i3-blue.png
+
+# Start compton
+exec --no-startup-id compton --inactive-dim 0.3 --focus-exclude '_NET_WM_NAME@:s = "rofi"'
+
+# Screenshot utility
+bindsym --release Print exec scrot -s /home/dizzyrobin/Pictures/screenshots/%Y-%m-%d_%H-%M-%S.png
 
 ```
 
