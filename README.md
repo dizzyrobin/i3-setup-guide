@@ -180,5 +180,5 @@ Now reboot and you're done!
 Additionally, I like to install this other utilities:
 
 ```
-sudo apt install okteta texlive texlive-lang-spanish texlive-latex-extra gcc g++ vlc wxmaxima thunderbird libreoffice gparted git audacity gdb evince vim geany terminator meld gimp make automake mtools pavucontrol trash-cli
+sudo apt install okteta texlive texlive-lang-spanish texlive-latex-extra latexmk gcc g++ vlc wxmaxima thunderbird libreoffice gparted git audacity gdb evince vim geany terminator meld gimp make automake mtools pavucontrol trash-cli
 ```
