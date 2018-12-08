@@ -17,6 +17,7 @@ gcc \
 g++ \
 clang \
 sphinx-common \
+python-dbus \
 i3blocks \
 feh \
 scrot \
@@ -38,6 +39,14 @@ full_text=
 align=left
 separator=false
 separator_block_width=12
+
+[spotify]
+label=
+command=/home/dizzyrobin/.config/i3blocks/spotify.py
+color=#81b71a
+interval=5
+
+[separator]
 
 [volume-pulseaudio]
 command=/home/dizzyrobin/.config/i3blocks/volume-pulseaudio
@@ -114,7 +123,8 @@ Change the bar content:
 bar {
     # Set up status_command to this
     status_command i3blocks
-        
+    
+    # Put this line if you want to keep i3blocks only in your primary monitor
     output primary
 }
 ```
