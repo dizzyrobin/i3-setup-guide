@@ -3,7 +3,7 @@
 import dbus
 import os
 import sys
-
+import time
 
 try:
     bus = dbus.SessionBus()
@@ -18,6 +18,8 @@ try:
             control_iface.PlayPause()
         elif (os.environ['BLOCK_BUTTON'] == '3'):
             control_iface.Next()
+            
+    time.sleep(0.1)
 
     spotify_iface = dbus.Interface(spotify, 'org.freedesktop.DBus.Properties')
     props = spotify_iface.Get('org.mpris.MediaPlayer2.Player', 'Metadata')
