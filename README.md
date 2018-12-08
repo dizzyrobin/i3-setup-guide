@@ -104,6 +104,15 @@ bar {
 }
 ```
 
+## Add padding to termintator
+
+Create the file `~/.config/gtk-3.0/gtk.css` with this content:
+```
+VteTerminal, vte-terminal {
+    padding: 10px;
+}
+```
+
 ## Done!
 
 Now reboot and you're done!
