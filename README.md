@@ -34,20 +34,31 @@ compton
 Put this in `~/.config/i3blocks/config`:
 
 ```
+full_text= 
+align=left
+separator=false
+separator_block_width=12
+
 [volume-pulseaudio]
 command=/home/dizzyrobin/.config/i3blocks/volume-pulseaudio
 interval=once
 signal=1
+
+[separator]
+
+[calendar]
+command=/home/dizzyrobin/.config/i3blocks/calendar
+interval=1
+label=
+
+[separator]
 
 [battery2]
 command=/home/dizzyrobin/.config/i3blocks/battery2
 markup=pango
 interval=30
 
-[calendar]
-command=/home/dizzyrobin/.config/i3blocks/calendar
-interval=1
-label=
+[separator]
 ```
 
 (you **MUST** change the username *dizzyrobin* for your own username)
@@ -146,6 +157,9 @@ command=enlighten | cut -d"(" -f2 | cut -d")" -f 1
 interval=once
 signal=1
 label=☀️
+min_width=☀️ 100%
+
+[separator]
 ```
 
 
