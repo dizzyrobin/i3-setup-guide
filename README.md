@@ -13,6 +13,10 @@ Reboot your PC and select i3 in the login screen.
 
 ```
 sudo apt install \
+gcc \
+g++ \
+clang \
+sphinx-common \
 i3blocks \
 feh \
 scrot \
@@ -112,6 +116,38 @@ VteTerminal, vte-terminal {
     padding: 10px;
 }
 ```
+
+## Setup backlight controller (only if using intel_backlight)
+
+Follow the instructions in https://github.com/HalosGhost/enlighten
+
+After that, execute:
+
+```
+cd /sys/class/backlight/intel_backlight/
+sudo chgrp video max_brightness
+sudo chgrp video brightness
+sudo chmod g+w brightness
+```
+
+And add this to the end of your i3 config file `~/.config/i3/config`
+
+```
+# Screen brightness
+bindsym XF86MonBrightnessUp exec enlighten +10% && pkill -RTMIN+1 i3blocks
+bindsym XF86MonBrightnessDown exec enlighten -10% && pkill -RTMIN+1 i3blocks
+```
+
+And this to the end of your i3blocks config file `~/.config/i3blocks/config`
+
+```
+[brightness]
+command=enlighten | cut -d"(" -f2 | cut -d")" -f 1
+interval=once
+signal=1
+label=☀️
+```
+
 
 ## Done!
 
