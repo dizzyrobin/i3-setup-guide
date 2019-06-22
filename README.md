@@ -35,7 +35,7 @@ compton
 Put this in `~/.config/i3blocks/config`:
 
 ```
-full_text= 
+full_text=
 align=left
 separator=false
 separator_block_width=12
@@ -123,7 +123,7 @@ Change the bar content:
 bar {
     # Set up status_command to this
     status_command i3blocks
-    
+
     # Put this line if you want to keep i3blocks only in your primary monitor
     output primary
 }
@@ -172,6 +172,11 @@ min_width=☀️ 100%
 [separator]
 ```
 
+## Customize grub (optional)
+
+Install this theme: https://github.com/vinceliuice/grub2-themes
+
+Cumstomize your grub entries with this tool: https://launchpad.net/~danielrichter2007/+archive/ubuntu/grub-customizer
 
 ## Done!
 
